@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AgroClima Jatum</title>
+
+    <!-- Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="https://iestpjatumyauyos.edu.pe/wp-content/uploads/2022/12/lsf2.png" type="image/png">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+</head>
+<body class="min-h-screen">
+
+  <!-- HEADER -->
+  <header class="bg-gradient-to-r from-green-600 to-emerald-700 shadow-xl sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="p-2 rounded-lg">
+            <img src="https://iestpjatumyauyos.edu.pe/wp-content/uploads/2022/12/lsf2.png" 
+                alt="Logo Yauyos" 
+                class="w-16 h-16 object-contain">
+        </div>
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold text-white">AgroClima Jatum</h1>
+          <p class="text-green-100 text-sm">Sistema de Información Agroclimática Pública</p>
+        </div>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-white p-2" title="Toggle menu">
+        <i data-lucide="menu" width="24"></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 py-6 space-y-8">
+
+    <!-- BANNER TIEMPO REAL -->
+    <div class="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 text-white shadow-xl">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <i data-lucide="map-pin" width="40"></i>
+          <div>
+            <h2 class="text-2xl font-bold">Provincia de Yauyos, Lima</h2>
+            <p class="text-blue-100">Altitud: 2,800 - 4,500 msnm</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 bg-white bg-opacity-20 rounded-lg px-4 py-2">
+          <i data-lucide="clock" width="24"></i>
+          <div>
+            <p class="text-sm">Actualizado en tiempo real</p>
+            <p id="clock" class="text-lg font-bold"></p>
+            <p id="date" class="text-sm"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONDICIONES CLIMÁTICAS -->
+    <div class="bg-white rounded-xl p-6 shadow-xl">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+        <i data-lucide="cloud" class="text-blue-500"></i>
+        Condiciones Climáticas Actuales
+      </h2>
+
+      <div id="climateWidgets" class="grid grid-cols-2 md:grid-cols-4 gap-4"></div>
+
+      <div class="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+        <p class="text-gray-800"><strong>Condición:</strong> <span id="conditionText"></span></p>
+        <p class="text-gray-600 text-sm mt-1">
+          Índice UV: <span id="uv"></span> • 
+          Presión: <span id="pressure"></span> hPa • 
+          Visibilidad: <span id="visibility"></span> km
+        </p>
+      </div>
+    </div>
+
+    <!-- ALERTAS AGROCLIMÁTICAS -->
+    <div class="bg-white rounded-xl p-6 shadow-xl">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+        <i data-lucide="alert-triangle" class="text-orange-500"></i>
+        Alertas y Avisos Agroclimáticos
+      </h2>
+
+      <div id="alertsContainer" class="space-y-4"></div>
+    </div>
+
+    <!-- ESTADO DE CULTIVOS -->
+    <div class="bg-white rounded-xl p-6 shadow-xl">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-2">
+        <i data-lucide="sprout" class="text-green-600"></i>
+        Estado de Cultivos en Yauyos - Condiciones Actuales
+      </h2>
+
+      <p class="text-gray-600 mb-6">Información actualizada sobre qué cultivos están en su rango óptimo según las condiciones climáticas actuales</p>
+
+      <div id="cropsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-gradient-to-r from-green-600 to-emerald-700 rounded-xl p-8 text-white shadow-xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h3 class="font-bold text-lg mb-3">Sobre el Sistema</h3>
+          <p class="text-green-100 text-sm">Sistema de información agroclimática para la Provincia de Yauyos.</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-3">Contacto</h3>
+          <p class="text-green-100 text-sm">IESTP Jatum Yauyos</p>
+        </div>
+
+        <div>
+          <h3 class="font-bold text-lg mb-3">Desarrollado por</h3>
+          <p class="text-white font-bold">Ing. Liann Melanny Huaman Cunyas</p>
+          <p class="text-green-100 text-sm mt-2">IESTP Jatum Yauyos - 2025</p>
+        </div>
+      </div>
+
+      <div class="border-t border-green-500 mt-6 pt-6 text-center text-green-100 text-sm">
+        © 2025 AgroClima Yauyos. Sistema de Gestión Agroclimática.
+      </div>
+    </footer>
+  </div>
+
+
+</body>
+</html>
